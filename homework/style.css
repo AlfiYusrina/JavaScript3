@@ -1,3 +1,93 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  background-color: #a1c7cb;
+  display: flex;
+  padding-left: 2em;
+  align-items: center;
+  margin-bottom: 2em;
+}
+#root {
+  margin: 0 auto;
+  width: 960px;
+}
+.repo-selector {
+  margin-left: 2em;
+  font-size: 14px;
+  width: 250px;
+  height: 32px;
+}
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.left-div {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin-right: 16px;
+  flex: 1;
+}
+.right-div {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin-right: 16px;
+  flex: 1;
+}
+
+td {
+    vertical-align: top;
+}
+td.label {
+    font-weight: bold;
+}
+.whiteframe {
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .2), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .12);
+}
+.contributor-avatar {
+    border-radius: 3px;
+    margin-right: 16px;
+}
+.contributor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.contributor-header {
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0, 54%);
+    padding: 8px 16px 4px 16px;
+}
+.contributor-item {
+    border-bottom: solid 1px rgb(0, 0, 0, 12%);
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+.contributor-data {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+.contributor-badge {
+    font-size: 12px;
+    padding: 2px 8px;
+    line-height: 1rem;
+    background-color: gray;
+    color: white;
+    border-radius: 4px;
+}
 .alert-error {
     color: red;
 }
