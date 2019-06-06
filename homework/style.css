@@ -89,5 +89,10 @@ td.label {
     border-radius: 4px;
 }
 .alert-error {
-    color: red;
+    color: white;
+    background-color: pink;
+    font-size: 1.4em;
+    font-family: Roboto;
+    padding: 1em;
+    border-radius: 1em;
 }

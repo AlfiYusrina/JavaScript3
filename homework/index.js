@@ -1,7 +1,7 @@
 'use strict';
 
 {
-  function fetchJSON(url, cb) {
+  const fetchJSON = (url, cb) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.responseType = 'json';
@@ -9,14 +9,18 @@
       if (xhr.status < 400) {
         cb(null, xhr.response);
       } else {
-        cb(new Error(`Network error: ${xhr.status} - ${xhr.statusText}`));
+        cb(
+          new Error(
+            `Sorry, there's something wrong. Network error : ${xhr.status} - ${xhr.statusText}.`,
+          ),
+        );
       }
     };
     xhr.onerror = () => cb(new Error('Network request failed'));
     xhr.send();
-  }
+  };
 
-  function createAndAppend(name, parent, options = {}) {
+  const createAndAppend = (name, parent, options = {}) => {
     const elem = document.createElement(name);
     parent.appendChild(elem);
     Object.keys(options).forEach(key => {
@@ -28,9 +32,9 @@
       }
     });
     return elem;
-  }
+  };
 
-  function main(url) {
+  const main = url => {
     fetchJSON(url, (err, data) => {
       const root = document.getElementById('root');
       if (err) {
@@ -141,7 +145,7 @@
         });
       }
     });
-  }
+  };
 
   const HYF_REPOS_URL = 'https://api.github.com/orgs/HackYourFuture/repos?per_page=100';
 
