@@ -2,10 +2,13 @@
 
 {
   const main = url => {
+    const rootContainer = document.getElementById('root');
+    const container = document.createElement('div');
+    container.className = 'container';
+    const containerDiv = document.querySelector('.container');
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const rootContainer = document.getElementById('root');
         const header = document.createElement('header');
         header.className = 'header';
         const titleHeader = document.createElement('p');
@@ -14,9 +17,6 @@
         repoSelector.className = 'repo-selector';
         header.appendChild(titleHeader);
         header.appendChild(repoSelector);
-
-        const container = document.createElement('div');
-        container.className = 'container';
 
         const containerLeft = document.createElement('div');
         containerLeft.className = 'left-div';
@@ -109,11 +109,16 @@
           setRepo(repoId);
         });
       })
-      .catch(() => {});
-    // const root = document.getElementById('root');
+      .catch(() => {
+        container.parentNode.removeChild(container);
+        const divError = document.createElement('div');
+        rootContainer.appendChild(divError);
+        divError.className = 'alert-error ';
+        divError.innerHTML = `Sorry, there's something wrong.`;
+      });
   };
 
-  const HYF_REPOS_URL = 'https://api.github.com/orgs/HackYourFuture/repos?per_page=100';
+  const HYF_REPOS_URL = 'https://api.github.com/orgs1x/HackYourFuture/repos?per_page=100';
 
   window.onload = () => main(HYF_REPOS_URL);
 }
