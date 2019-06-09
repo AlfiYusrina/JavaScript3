@@ -5,7 +5,7 @@
     const rootContainer = document.getElementById('root');
     const container = document.createElement('div');
     container.className = 'container';
-    const containerDiv = document.querySelector('.container');
+
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -118,7 +118,7 @@
       });
   };
 
-  const HYF_REPOS_URL = 'https://api.github.com/orgs1x/HackYourFuture/repos?per_page=100';
+  const HYF_REPOS_URL = 'https://api.github.com/orgs/HackYourFuture/repos?per_page=100';
 
   window.onload = () => main(HYF_REPOS_URL);
 }
